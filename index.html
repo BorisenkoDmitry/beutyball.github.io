@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.0/swiper-bundle.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/simplebar@latest/dist/simplebar.css"
+/>
+    <link rel="stylesheet" href="/css/burger.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.0/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="/js/index.js" defer></script>
+</head>
+
+<body>
+    <header class="header gsap-animation-Y">
+        <div class="header-top">
+            <div class="container">
+                <button class="burger">
+                    <span class="line hover"></span>
+                    <span class="line hover"></span>
+                    <span class="line hover"></span>
+                </button>
+                <a class="header-logo" href="/"><img src="/images/logo.svg" alt="логотип" /></a>
+                <ul class="header-top-list">
+                    <li class="header-top-item">
+                        <a href="/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 2L11 13" stroke="white" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header-top-item">
+                        <a href="/">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8386 5.15941C21.498 4.80824 21.0707 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.11999 4 3.39999 4.46C2.92924 4.59318 2.50197 4.84824 2.16134 5.19941C1.82071 5.55057 1.57878 5.98541 1.45999 6.46C1.14521 8.20556 0.991228 9.97631 0.999992 11.75C0.988771 13.537 1.14276 15.3213 1.45999 17.08C1.59095 17.5398 1.8383 17.9581 2.17814 18.2945C2.51797 18.6308 2.93881 18.8738 3.39999 19C5.11999 19.46 12 19.46 12 19.46C12 19.46 18.88 19.46 20.6 19C21.0707 18.8668 21.498 18.6118 21.8386 18.2606C22.1793 17.9094 22.4212 17.4746 22.54 17C22.8524 15.2676 23.0063 13.5103 23 11.75C23.0112 9.96295 22.8572 8.1787 22.54 6.42V6.42Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M9.75 15.02L15.5 11.75L9.75 8.47998V15.02Z" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="header-top-item">
+                        <a href="/">
+                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16 1H6C3.23858 1 1 3.23858 1 6V16C1 18.7614 3.23858 21 6 21H16C18.7614 21 21 18.7614 21 16V6C21 3.23858 18.7614 1 16 1Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M15 10.37C15.1234 11.2022 14.9813 12.0522 14.5938 12.799C14.2063 13.5458 13.5932 14.1514 12.8416 14.5297C12.0901 14.9079 11.2385 15.0396 10.4078 14.9059C9.57714 14.7723 8.80977 14.3801 8.21485 13.7852C7.61993 13.1902 7.22774 12.4229 7.09408 11.5922C6.96042 10.7615 7.09208 9.90989 7.47034 9.15837C7.8486 8.40685 8.4542 7.79374 9.201 7.40624C9.9478 7.01874 10.7978 6.87658 11.63 7C12.4789 7.12588 13.2649 7.52146 13.8717 8.1283C14.4785 8.73515 14.8741 9.52107 15 10.37Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <g filter="url(#filter0_dd)">
+                                    <path d="M16.5 5.5H16.51" stroke="white" stroke-width="3" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_dd" x="11" y="4" width="11.01" height="11"
+                                        filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                        <feOffset dy="4" />
+                                        <feGaussianBlur stdDeviation="2" />
+                                        <feColorMatrix type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+                                        <feOffset dy="4" />
+                                        <feGaussianBlur stdDeviation="2" />
+                                        <feColorMatrix type="matrix"
+                                            values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                        <feBlend mode="normal" in2="effect1_dropShadow" result="effect2_dropShadow" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow"
+                                            result="shape" />
+                                    </filter>
+                                </defs>
+                            </svg>
+
+                        </a>
+
+                    </li>
+                    <li class="header-top-item">
+                        <a href="/">
+                            <svg width="13" height="22" viewBox="0 0 13 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 1H9C7.67392 1 6.40215 1.52678 5.46447 2.46447C4.52678 3.40215 4 4.67392 4 6V9H1V13H4V21H8V13H11L12 9H8V6C8 5.73478 8.10536 5.48043 8.29289 5.29289C8.48043 5.10536 8.73478 5 9 5H12V1Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </a>
+                    </li>
+
+                    <li class="header-top-item">
+                        <button class="header-basket">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10.5 25.6666C11.1443 25.6666 11.6666 25.1443 11.6666 24.5C11.6666 23.8556 11.1443 23.3333 10.5 23.3333C9.85565 23.3333 9.33331 23.8556 9.33331 24.5C9.33331 25.1443 9.85565 25.6666 10.5 25.6666Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M23.3334 25.6666C23.9777 25.6666 24.5 25.1443 24.5 24.5C24.5 23.8556 23.9777 23.3333 23.3334 23.3333C22.689 23.3333 22.1667 23.8556 22.1667 24.5C22.1667 25.1443 22.689 25.6666 23.3334 25.6666Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M1.16669 1.16669H5.83335L8.96002 16.7884C9.0667 17.3255 9.35891 17.808 9.78549 18.1514C10.2121 18.4948 10.7458 18.6772 11.2934 18.6667H22.6334C23.1809 18.6772 23.7146 18.4948 24.1412 18.1514C24.5678 17.808 24.86 17.3255 24.9667 16.7884L26.8334 7.00002H7.00002"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="container">
+                <a class="header-phone" href="tel:+74955956434">+7 495 595-64-34</a>
+                <nav class="header-nav">
+                    <ul class="header-bottom-list">
+                        <li class="header-bottom-item"><a href="/">Каталог</a></li>
+                        <li class="header-bottom-item"><a href="/">О нас</a></li>
+                        <li class="header-bottom-item"><a href="/">Наши работы</a></li>
+                        <li class="header-bottom-item"><a href="/">Фото клиентов</a></li>
+                        <li class="header-bottom-item"><a href="/">Отзывы</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="banner gsap-opacity">
+            <div class="container gsap-animation-X">
+                <h1 class="banner-title" tabindex="0">Воздушные шары для вашего праздника</h1>
+                <button class="banner-btn" aria-label="Информация подробнее о товарах воздушных шаров">Узнать
+                    подробнее</button>
+            </div>
+        </section>
+
+        <section class="catalog-section section-padding">
+            <div class="container">
+                <h2 class="title-h2">Каталог</h2>
+                <div class="content">
+                    <div class="catalog-left">
+                        <aside class="catalog-filter">
+                            <h3 class="catalog-filter-h3">Категории</h3>
+                            <form action="/" class="catalog-form">
+                                <fieldset class="filter-section">
+                                    <legend class="filter-section-h4">События и даты</legend>
+                                    <div class="filter-checkbox">
+                                        <input id="filterBirthday" class="filter-checkbox visually-hidden"
+                                            type="checkbox" checked>
+                                        <label for="filterBirthday">Дни рождения</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterWeddings" class="filter-checkbox visually-hidden"
+                                            type="checkbox">
+                                        <label for="filterWeddings">Свадьбы</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterWomanday" class="filter-checkbox visually-hidden"
+                                            type="checkbox">
+                                        <label for="filterWomanday">8 марта</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterLoveday" class="filter-checkbox visually-hidden"
+                                            type="checkbox">
+                                        <label for="filterLoveday">День влюбленных</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterManday" class="filter-checkbox visually-hidden"
+                                            type="checkbox">
+                                        <label for="filterManday">23 февраля</label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="filter-section">
+                                    <legend class="filter-section-h4">Фигуры</legend>
+                                    <div class="filter-checkbox">
+                                        <input id="filterColormix" class="filter-checkbox visually-hidden"
+                                            type="checkbox">
+                                        <label for="filterColormix">Разноцветный микс</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterBaloonbox" class="filter-checkbox visually-hidden"
+                                            type="checkbox">
+                                        <label for="filterBaloonbox">Baloonbox</label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="filter-section hits-red">
+                                    <legend class="filter-section-h4"><span>ХИТЫ</span></legend>
+                                    <div class="filter-checkbox">
+                                        <input id="filterHit1" class="filter-checkbox visually-hidden" type="checkbox">
+                                        <label for="filterHit1">Хит 1</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterHit2" class="filter-checkbox visually-hidden" type="checkbox">
+                                        <label for="filterHit2">Хит 2</label>
+                                    </div>
+                                    <div class="filter-checkbox">
+                                        <input id="filterHit3" class="filter-checkbox visually-hidden" type="checkbox">
+                                        <label for="filterHit3">Хит 3</label>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </aside>
+                    </div>
+                    <div class="catalog-right">
+                        <div class="catalog-right-scrollbar">
+                            <ul class="catalog-list">
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                <li class="catalog-list-item">
+                                    <div class="catalog-img"><img src="/images/balls.webp" alt="Шарики" /></div>
+                                    <h3 class="catalog-list-h3">Разноцветный микс</h3>
+                                    <p class="catalog-list-p">
+                                        Время полета: от 1 дня до месяца<br />
+                                        Гарантия полета: 24 часа<br />
+                                        Размер: 25 см
+                                    </p>
+                                    <span class="catalog-price">2 000 p</span>
+                                    <button class="catalog-list-btn">Добавить в корзину</button>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="pagination">
+                            <button class="pagination-prev">
+                                <svg width="34" height="8" viewBox="0 0 34 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.642454 4.3466C0.452492 4.14763 0.461006 3.83114 0.661467 3.63969L3.92819 0.519831C4.12866 0.328381 4.44516 0.334471 4.63512 0.533433C4.82508 0.732394 4.81656 1.04889 4.6161 1.24034L1.71235 4.01355L4.46398 6.89556C4.65394 7.09453 4.64543 7.41102 4.44496 7.60247C4.2445 7.79392 3.928 7.78783 3.73804 7.58887L0.642454 4.3466ZM33.7217 5.12952L0.991975 4.4998L1.01887 3.50009L33.7486 4.12981L33.7217 5.12952Z"
+                                        fill="#68CFF0" />
+                                </svg>
+                            </button>
+                            <ul class="pagination-list">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                            </ul>
+                            <button class="pagination-next"><svg width="35" height="8" viewBox="0 0 35 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M34.47 4.66975C34.6668 4.4745 34.6692 4.15795 34.4754 3.96272L31.3175 0.781138C31.1237 0.585901 30.8071 0.585908 30.6103 0.781155C30.4135 0.976402 30.4111 1.29295 30.6049 1.48819L33.412 4.31626L30.5618 7.14446C30.365 7.33971 30.3626 7.65626 30.5564 7.8515C30.7501 8.04674 31.0667 8.04673 31.2635 7.85148L34.47 4.66975ZM0.996237 4.81699L34.1153 4.81619L34.1229 3.81629L1.00387 3.81709L0.996237 4.81699Z"
+                                        fill="#68CFF0" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- <section class="ourWork-section section-padding">
+            <div class="container">
+                <h2 class="title-h2">Наши работы</h2>
+                <div class="content">
+                    <div class="ourWork-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                            <div class="swiper-slide"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <button class="catalog-prev"></button>
+                    <button class="catalog-next"></button>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+</body>
+
+</html>
