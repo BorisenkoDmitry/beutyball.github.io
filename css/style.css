@@ -158,7 +158,7 @@ fieldset {
     font-weight: bold;
 }
 .header-phone:before {
-    content: url("/images/phone.svg");
+    content: url("../images/phone.svg");
    margin-right: 13px;
 }
 
@@ -169,7 +169,7 @@ fieldset {
 /* banner */
 
 .banner {
-    background: url("/images/banner.webp");
+    background: url("../images/banner.webp");
     background-size: cover;
     background-position: center;
 
@@ -226,7 +226,7 @@ fieldset {
     flex: 1;
     margin-left: 20px;
 
-    background-image: url("/images/aboutUs.jpg");
+    background-image: url("../images/aboutUs.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -251,13 +251,13 @@ fieldset {
     background-repeat: no-repeat;
 }
 .ourWork-section .swiper-slide:nth-child(1) {
-    background-image: url("/images/work.jpg");
+    background-image: url("../images/work.jpg");
 }
 .ourWork-section .swiper-slide:nth-child(2) {
-    background-image: url("/images/work1.jpg");
+    background-image: url("../images/work1.jpg");
 }
 .ourWork-section .swiper-slide:nth-child(3) {
-    background-image: url("/images/work2.jpg");
+    background-image: url("../images/work2.jpg");
 }
 
 .ourWork-disabled {
@@ -284,7 +284,7 @@ fieldset {
 .catalog-section:before {
     content: "";
     height: 200px;
-    background-image: url(/images/clouds.png);
+    background-image: url(../images/clouds.png);
     background-size: auto 100%;
     background-position: center;
     position: absolute;
@@ -557,7 +557,7 @@ fieldset {
         height: 20px;
         top: 0;
         right: 0;
-        background-image: url("/images/arrow.svg");
+        background-image: url("../images/arrow.svg");
         background-size: cover;
         transform: rotate(-90deg);
         transition: 0.5s ease-in-out;
@@ -644,7 +644,7 @@ fieldset {
         text-align: center;
     }
     .banner {
-        background: url("/images/banner-1024.webp") right/cover;
+        background: url("../images/banner-1024.webp") right/cover;
         padding-bottom: 60px;
     }
     .banner-title {
