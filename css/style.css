@@ -284,7 +284,7 @@ fieldset {
 .catalog-section:before {
     content: "";
     height: 200px;
-    background-image: url(../images/clouds.png);
+    background-image: url("../images/clouds.png");
     background-size: auto 100%;
     background-position: center;
     position: absolute;
@@ -396,7 +396,7 @@ fieldset {
     background-color: red;
 }
 .hits-red input:checked + label:before {
-    background-image: url("/images/checkboxred.svg") !important;
+    background-image: url("../images/checkboxred.svg") !important;
 }
 
 .hits-red input:checked + label {
@@ -429,7 +429,7 @@ fieldset {
     background-repeat: no-repeat;
 }
 .filter-checkbox input:checked + label:before {
-    background-image: url("/images/checkbox.svg");
+    background-image: url("../images/checkbox.svg");
 }
 .filter-checkbox input:checked + label {
     color: #54c3db;
@@ -535,7 +535,7 @@ fieldset {
 
 @media (max-width: 1024px) {
     .banner {
-        background: url("/images/banner-1024.webp") center/cover;
+        background: url("../images/banner-1024.webp") center/cover;
         background-size: cover;
     }
 }
