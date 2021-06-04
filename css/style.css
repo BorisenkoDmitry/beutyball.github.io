@@ -66,6 +66,7 @@ fieldset {
     margin: 0 auto;
 }
 
+
 .title-h2 {
     font-size: 46px;
     margin-bottom: 30px;
@@ -341,7 +342,7 @@ fieldset {
     border: 1px solid #65BAF7;
     outline: 0px;
 }
-.ourWork-popup, .basket-popup {
+.ourWork-popup, .basket-popup, .success-popup {
     position: fixed;
     z-index: 101;
     top: 0;
@@ -354,6 +355,7 @@ fieldset {
     justify-content: center;
     opacity: 0;
 }
+
 .basket-popup {
     opacity: 1;
 }
@@ -814,6 +816,10 @@ fieldset {
 }
 
 /* basket */
+.basket-content.basket-success {
+    height: auto !important;
+    width: auto;
+}
 .basket-popup {
     padding: 40px;
     display: none;
@@ -826,7 +832,10 @@ fieldset {
     max-height: 900px;
     height: 100%;
 }
-
+.success-content {
+    padding: 40px;
+    background-color: #fff;
+}
 .basket-header {
     display: flex;
     flex-wrap: wrap;
@@ -915,6 +924,13 @@ fieldset {
     position: absolute;
     right: -10px;
     bottom: -6px;
+}
+.field-basket {
+    display: flex;
+    flex-direction: column-reverse;
+}
+.field-basket .js-validate-error-label {
+    margin-bottom: 20px;
 }
 @media (min-width: 1200px) {
 

@@ -9,17 +9,17 @@ document.addEventListener("DOMContentLoaded", function () {
     })
     basketanim.pause();
 
-    document.querySelector(".basket-close").addEventListener("click", function() {
+    document.querySelector(".basket-close").addEventListener("click", function () {
         basketanim.reverse();
     })
-    document.querySelector(".header-basket").addEventListener("click", function() {
+    document.querySelector(".header-basket").addEventListener("click", function () {
         priceBasket = 0;
         basketanim.play();
         document.querySelectorAll(".basket-list-item").forEach(item => {
-            
+
             let price = item.querySelector(".basket-list-item__price-num").textContent;
             priceBasket += parseInt(price);
-            
+
         })
         document.querySelector(".sum-price").textContent = priceBasket;
 
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
             iconImageSize: [40, 62],
             iconImageOffset: [-3, -42]
         });
-       
+
         // Размещение геообъекта на карте.
         myMap.geoObjects.add(myPlacemark);
     }
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
     animateSectionWork();
-    
+
     document.querySelector(".ourwork-show").addEventListener("click", function () {
         document.querySelectorAll(".ourwork-hidden").forEach(item => {
             item.classList.remove("ourwork-hidden");
@@ -187,3 +187,98 @@ function animateSectionWork() {
     })
 
 }
+
+
+/* justValidate */
+document.addEventListener("DOMContentLoaded", function () {
+    let product = document.querySelector("#product-list");
+    let strProduct = "";
+    document.querySelectorAll(".basket-list-item").forEach((item, index) => {
+
+        let text = item.querySelector(".basket-list-item__h3").textContent;
+        let price = item.querySelector(".basket-list-item__price-num").textContent + " p";
+        strProduct += `\n ${index + 1}. Товар: ${text} ; Цена товара: ${price}`;
+    })
+
+    product.value = strProduct;
+    let inPhone = document.querySelector("#phone");
+    var inMask = new Inputmask("+7 (999)-999-99-99");
+    inMask.mask(inPhone);
+    new JustValidate('.basket-form', {
+        rules: {
+            product: {
+                function: (name, value) => {
+                    return value;
+                }
+            },
+            name: {
+                required: true,
+            },
+            phone: {
+                required: true,
+                function: (name, value) => {
+                    const phone = inPhone.inputmask.unmaskedvalue()
+          
+                    if (Number(phone) && phone.length === 10) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+
+                },
+
+            },
+            email: {
+                required: true,
+                email: true
+            },
+        },
+        messages: {
+            product: {
+                function: "Корзина пустая"
+            },
+            name: {
+                required: "Введите имя"
+            },
+            phone: {
+                required: "Введите телефон",
+                function: "Вы ввели не корректный номер телефона"
+            },
+            email: {
+                required: "Введите почту",
+                email: "Пожалуйста, введите корректную почту"
+            },
+
+        },
+
+        submitHandler: function (form, values, ajax) {
+
+            ajax({
+              url: '/send.php',
+              method: 'POST',
+              data: values,
+              async: true,
+              callback: function(response)  {
+                let success = document.createElement("div");
+                success.classList.add("success-popup");
+                let content = document.createElement("div");
+                content.classList.add("success-content");
+                document.querySelector(".basket-popup").style.display = "none";
+                document.querySelector(".basket-popup").style.opacity = 0;
+                success.style.opacity = 1;
+                if (parseInt(response) === 1) {
+                    content.textContent = "Сообщение успешно отправлено"
+                } else {
+                    content.textContent = "Письмо не отправилось, что то пошло не так";
+                }
+                success.append(content);
+                document.querySelector('body').append(success);
+
+                setTimeout(function() {
+                    success.remove();
+                },1500)
+              }
+            });
+          },
+    });
+})

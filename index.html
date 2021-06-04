@@ -15,8 +15,11 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.0/swiper-bundle.min.js" defer></script>
-    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js" defer></script>
+    <script src="js/inputmask.min.js" defer></script>
+    <script src="js/just-validate.min.js" defer></script>
     <script src="js/index.js" defer></script>
+    
 </head>
 
 <body>
@@ -94,11 +97,20 @@
                 </li>
             </ul>
             <div class="basket-sumprice">Общая сумма заказа: <span class="sum-price">10 000</span> р</div>
-            <form action="/" class="basket-form form-style">
-                <input type="text" name="name" class="basket-input" placeholder="Имя">
+            <form class="basket-form form-style">
+                <div class="field-basket">
+                    <input type="hidden" id="product-list" class="basket-input" data-validate-field="product" name="product">
+                </div>
+                <div class="field-basket">
+                    <input value="Dmitriy" type="text" name="name" class="basket-input" placeholder="Имя" data-validate-field="name">
+                </div>
+                <div class="field-basket">
                 <input type="tel" id="phone" name="phone" class="basket-input" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required
-                    placeholder="Телефон">
-                <input type="email" class="basket-input" placeholder="Почта">
+                    placeholder="Телефон" data-validate-field="phone">
+                </div>
+                <div class="field-basket">
+                <input value="dsd@mail.ru" type="email" name="mail" class="basket-input" placeholder="Почта" data-validate-field="email">
+                </div>
                 <button class="basket-submit" type="submit">Заказать</button>
             </form>
         </div>
@@ -166,7 +178,7 @@
                                         stroke-linejoin="round" />
                                 </g>
                                 <defs>
-                                    <filter id="filter0_dd" x="11" y="4" width="11.01" height="11"
+                                    <filter id="filter0_dd2" x="11" y="4" width="11.01" height="11"
                                         filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                                         <feFlood flood-opacity="0" result="BackgroundImageFix" />
                                         <feColorMatrix in="SourceAlpha" type="matrix"
