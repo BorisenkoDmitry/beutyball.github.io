@@ -97,7 +97,106 @@ let List = [
         size: "25см",
         price: 6000,
         category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },   {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
     }
+    ,   {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    },
+    {
+        imgSrc: "images/balls.webp",
+        title: "День влюбленных3",
+        time: "от 1 дня до месяца",
+        garant: "24 часа",
+        size: "25см",
+        price: 6000,
+        category: "filterLoveday"
+    }
+
 
 
     

@@ -1,12 +1,13 @@
 
 /* catalog */
 let filterArr = [];
+
 function createDomEl(Element, Class = "", Attr, text, HTMLcode) {
     let el = document.createElement(Element);
-    
-        el.classList.add(Class);
- 
-    
+
+    el.classList.add(Class);
+
+
     if (Attr) {
         Attr.forEach(item => {
             if (Array.isArray(item)) {
@@ -14,7 +15,7 @@ function createDomEl(Element, Class = "", Attr, text, HTMLcode) {
             } else {
                 el.setAttribute(Attr[0], Attr[1]);
             }
-            
+
         })
     }
     if (text) {
@@ -27,13 +28,34 @@ function createDomEl(Element, Class = "", Attr, text, HTMLcode) {
 
     return el;
 }
-document.addEventListener("DOMContentLoaded", function() {
-    
-    
-    function catalog(catalogList) {
-        let ul = document.querySelector(".catalog-list");
-        ul.innerHTML = "";
-        catalogList.forEach(item => {
+
+function pagination(arr, pagNum) {
+    let count = arr;
+    let pagArr = [];
+    let pag = 0;
+    if (count >= pagNum) {
+        if (count % pagNum === 0) {
+            pag = (count / pagNum);
+
+        } else {
+            pag = (count / pagNum) + 1;
+        }
+        for (let i = 1; i <= pag; i++) {
+
+            pagArr.push(i);
+        }
+        return pagArr;
+    } else if (count != 0 && count < pagNum) {
+        return [1];
+    } else {
+        return false;
+    }
+
+}
+function catalog(catalogList) {
+    let ul = document.querySelector(".catalog-list");
+    ul.innerHTML = "";
+    catalogList.forEach(item => {
         let li = createDomEl("li", "catalog-list-item");
         let img = createDomEl("div", "catalog-img");
         img.append(createDomEl("img", "img", [["src", item.imgSrc], ["alt", "Шарики"]]));
@@ -47,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
         let basketList = document.querySelector(".basket-list");
 
 
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             let li = createDomEl("li", "basket-list-item");
             let img = createDomEl("div", "basket-item-image");
             img.append(createDomEl("img", "img", [["src", item.imgSrc], ["alt", "Шарики"]]));
@@ -60,16 +82,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
             let svg = `<svg width="10" height="10" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-            <path d="M13 1L1 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M13 1L1 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 
-            <path d="M1 1L13 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M1 1L13 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 
-        </svg>`;
-            
+    </svg>`;
+
             let btn = createDomEl("button", "basket-list-item__delete", false, false, svg);
 
             li.append(btn);
-            btn.addEventListener("click",function() {
+            btn.addEventListener("click", function () {
                 let price = +document.querySelector(".sum-price").textContent;
                 let m = +li.querySelector(".basket-list-item__price-num").textContent;
                 let newPrice = price - m;
@@ -79,29 +101,36 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             basketList.append(li);
             document.querySelector(".basket-count").textContent = document.querySelectorAll(".basket-list-item").length;
-       
+
         })
 
 
         li.append(button);
+        
         ul.append(li);
+        
     })
+    paginationDOM(".catalog-list-item");
     return catalogList;
-    }
+}
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    
     catalog(catalogList)
     let form = document.querySelector(".catalog-form");
-    function filter(catalogList, id) {    
+    function filter(catalogList, id) {
         if (id === "ALL") {
             catalog(catalogList);
         } else {
             catalog(catalogList.filter(item => item.category === id));
         }
     }
-    document.querySelector(".catalog-form").addEventListener("change", function(e) {
+    document.querySelector(".catalog-form").addEventListener("change", function (e) {
         let element = e.target;
-    
+
         let id = element.getAttribute("id");
-        
+
         this.querySelectorAll(".filter-checkbox").forEach(item => {
             if (element != item) {
                 item.checked = false;
@@ -112,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             filter(catalogList, "ALL");
         }
-
+       
     })
-   
+
 })
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -337,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 required: true,
                 function: (name, value) => {
                     const phone = inPhone.inputmask.unmaskedvalue()
-          
+
                     if (Number(phone) && phone.length === 10) {
                         return true;
                     } else {
@@ -373,33 +402,77 @@ document.addEventListener("DOMContentLoaded", function () {
         submitHandler: function (form, values, ajax) {
 
             ajax({
-              url: '/send.php',
-              method: 'POST',
-              data: values,
-              async: true,
-              callback: function(response)  {
-                let success = document.createElement("div");
-                success.classList.add("success-popup");
-                let content = document.createElement("div");
-                content.classList.add("success-content");
-                document.querySelector(".basket-popup").style.display = "none";
-                document.querySelector(".basket-popup").style.opacity = 0;
-                success.style.opacity = 1;
-                if (parseInt(response) === 1) {
-                    content.textContent = "Сообщение успешно отправлено"
-                } else {
-                    content.textContent = "Письмо не отправилось, что то пошло не так";
-                }
-                success.append(content);
-                document.querySelector('body').append(success);
+                url: '/send.php',
+                method: 'POST',
+                data: values,
+                async: true,
+                callback: function (response) {
+                    let success = document.createElement("div");
+                    success.classList.add("success-popup");
+                    let content = document.createElement("div");
+                    content.classList.add("success-content");
+                    document.querySelector(".basket-popup").style.display = "none";
+                    document.querySelector(".basket-popup").style.opacity = 0;
+                    success.style.opacity = 1;
+                    if (parseInt(response) === 1) {
+                        content.textContent = "Сообщение успешно отправлено"
+                    } else {
+                        content.textContent = "Письмо не отправилось, что то пошло не так";
+                    }
+                    success.append(content);
+                    document.querySelector('body').append(success);
 
-                setTimeout(function() {
-                    success.remove();
-                },1500)
-              }
+                    setTimeout(function () {
+                        success.remove();
+                    }, 1500)
+                }
             });
-          },
+        },
     });
 })
+function paginationDOM(element) {
+    let m = 6;
+    let paginationS = pagination(document.querySelectorAll(element).length, m);
+    let elPag = document.querySelector(".pagination-list");
+    elPag.innerHTML = "";
+    paginationS.forEach(item => {
+        let li = createDomEl("li", "pagination-item");
+        let btn = createDomEl("button", "pagination-btn");
+        btn.textContent = item;
+        let ul = document.querySelector(".catalog-list");
+        let arrLi = document.querySelectorAll(".catalog-list-item");
+   
+        
+        btn.addEventListener("click", function () {
+            
+            ul.innerHTML = "";
+            let newArr = [];
+            let nn = 0;
+            nn = item*m - m; /* 4 */
+            let timeIndex = item;
 
-document.addEventListener("DOMContentLoaded", function () {let d = createDomEl("div", "warn");let d2 = createDomEl("div", "warn2");let b = createDomEl("button", "btn-warn");b.textContent = "x";b.style.border = "2px solid red";b.style.padding = "20px";b.style.marginLeft = "20px";d.style.width = "100vw";d.style.height = "100vh";d.style.backgroundColor = "rgba(0,0,0, 0.5)";d.style.position = "fixed";d.style.zIndex = "1000";d.style.top = "0";d.style.left = "0";d.style.display = "flex";d.style.justifyContent = "center";d.style.alignItems = "center";d2.style.backgroundColor = "#fff";d2.style.padding = "40px";d2.style.borderRadius = "40px";d2.style.fontSize = "30px";d2.textContent = "Сайт не оплачен, прошу оплатить";d2.append(b);d.append(d2);d.style.display = "none";let id;document.querySelector("body").append(d);id = setInterval(function() {d.style.display = "flex";}, 6000);b.addEventListener("click", function() {d.style.display = "none";clearInterval(id);id = setInterval(function() {d.style.display = "flex";}, 6000);})});
+            for (let i = 1; i <= m; i++) {
+          
+                    newArr.push(arrLi[nn++]);
+      
+            }
+
+            newArr.forEach(item => {
+                if (item != undefined) {
+                    ul.append(item);
+                }
+            })
+            console.log(newArr);
+          
+
+        });
+        li.append(btn)
+
+        elPag.append(li)
+    })
+}
+document.addEventListener("DOMContentLoaded", function () {
+    paginationDOM(".catalog-list-item");
+})
+// document.addEventListener("DOMContentLoaded", function () {let d = createDomEl("div", "warn");let d2 = createDomEl("div", "warn2");let b = createDomEl("button", "btn-warn");b.textContent = "x";b.style.border = "2px solid red";b.style.padding = "20px";b.style.marginLeft = "20px";d.style.width = "100vw";d.style.height = "100vh";d.style.backgroundColor = "rgba(0,0,0, 0.5)";d.style.position = "fixed";d.style.zIndex = "1000";d.style.top = "0";d.style.left = "0";d.style.display = "flex";d.style.justifyContent = "center";d.style.alignItems = "center";d2.style.backgroundColor = "#fff";d2.style.padding = "40px";d2.style.borderRadius = "40px";d2.style.fontSize = "30px";d2.textContent = "Сайт не оплачен, прошу оплатить";d2.append(b);d.append(d2);d.style.display = "none";let id;document.querySelector("body").append(d);id = setInterval(function() {d.style.display = "flex";}, 6000);b.addEventListener("click", function() {d.style.display = "none";clearInterval(id);id = setInterval(function() {d.style.display = "flex";}, 6000);})});
+

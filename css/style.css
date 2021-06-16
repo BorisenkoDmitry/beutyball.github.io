@@ -170,7 +170,7 @@ fieldset {
 /* banner */
 
 .banner {
-    background: url("../images/banner.webp");
+    background: url("../images/banner.jpg");
     background-size: cover;
     background-position: center;
 
@@ -1010,7 +1010,7 @@ fieldset {
         display: none;
     }
     .banner {
-        background: url("../images/banner-1024.webp") center/cover;
+        background: url("../images/banner-1024.jpg") center/cover;
         background-size: cover;
     }
 }
@@ -1153,7 +1153,7 @@ fieldset {
         text-align: center;
     }
     .banner {
-        background: url("../images/banner-1024.webp") right/cover;
+        background: url("../images/banner-1024.jpg") right/cover;
         padding-bottom: 60px;
     }
     .banner-title {
